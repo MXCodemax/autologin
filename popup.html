@@ -1,0 +1,126 @@
+<!--
+AutoLogin Extensão para Chrome
+
+Descrição: Uma extensão para o Chrome que faz login automático em diversos modelos de roteadores e antenas. 
+Inclui suporte para dois tipos de usuários: cliente e provedor. A extensão identifica automaticamente qual equipamento 
+pertence ao provedor e qual pertence ao cliente. Modelos testados incluem Intelbras, Ubiquiti, TP-Link 
+(WON 5A MiMo, NanoStationM5, RocketM5, LiteBean Gen2, APC, Archer C20, AirFiber, TL-WR940N).
+
+Autor: Abraão Barbosa
+E-mail: abraao@introtech.com.br
+Data de Criação: 10/11/2023
+
+Licença: MIT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Login</title>
+  <script src="popup.js"></script>
+  <style>
+    body {
+      background-color: #272822;
+    }
+
+    h1 {
+      text-align: center;
+      color: #A6E22E;
+    }
+
+    h3 {
+      text-align: center;
+      color: #A6E22E;
+    }
+
+    label {
+      padding-left: 15px;
+      text-align: start;
+      display: block;
+      margin: 10px 0;
+      color: #FD971F;
+    }
+
+    input {
+      width: 250px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      padding: 7px;
+      background-color: #3E3D32;
+      color: #F8F8F2;
+      border: 1px solid #75715E;
+    }
+
+    footer{
+      margin-bottom: 10px;
+      text-align: center;
+      color: #727271;
+      
+    }
+    footer a {
+      color: rgb(96, 47, 100);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: rgb(176, 109, 238);
+      text-decoration: none;
+    }
+
+    button {
+      background-color: #66D9EF;
+      color: #272822;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 0;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .popup-container {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #272822;
+      width: 280px;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .btn_style {
+      text-align: center;
+    }
+
+    button:hover {
+      background-color: #5DA3D0;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup-container">
+    <h1>Auto Login</h1>
+    <h3>Cliente</h3>
+    <label for="clientUsername">Usuário:</label>
+    <input type="text" id="clientUsername">
+    <label for="clientPassword">Senha:</label>
+    <input type="password" id="clientPassword">
+    <h3>Provedor</h3>
+    <label for="providerUsername">Usuário:</label>
+    <input type="text" id="providerUsername">
+    <label for="providerPassword">Senha:</label>
+    <input type="password" id="providerPassword">
+    <div class="btn_style">
+      <button id="saveButton"><a style="text-decoration: none; color: #2b2b27;" href="https://www.introtech.com.br/blog/" target="_blank">Salvar</a></button>
+    </div>
+    <footer>
+      <strong>&copy; 2023 Abraão Barbosa<br><a href="https://www.introtech.com.br" target="_blank">Introtech Tecnologia da Informação</a></strong>
+    </footer>
+  </div>
+</body>
+</html>
+
